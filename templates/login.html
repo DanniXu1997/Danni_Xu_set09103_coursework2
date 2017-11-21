@@ -20,6 +20,17 @@
         <div class="text" style="color:grey; text-align: center"><strong>Error:</strong> {{ error }}</div>
        {% endif %}
 
+ {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}
+
+
     </div>
 <br/><br/><br/><br/>
 {% endblock %}
